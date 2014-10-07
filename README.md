@@ -32,3 +32,13 @@ What did we learn?
 * Wasted 1 hour getting twitter library to work in Mono
 * It's actually pretty useful
 * You can make something pretty useful in an evening
+
+What can be improved?
+----------------
+
+I might do these at some point
+
+* Program layout
+* Whitespace checking
+* time format?
+* ''Regex''
