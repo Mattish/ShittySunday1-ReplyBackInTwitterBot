@@ -17,6 +17,7 @@ namespace ReplyBackIn
         private int _running;
         private const int TwitterMentionSleep = 60000;
         private static StreamWriter _streamWriter;
+        private static string screenName = ConfigurationManager.AppSettings["screenName"];
         public Program(bool ignoreCurrentMentions)
         {
 
@@ -120,7 +121,7 @@ namespace ReplyBackIn
                                     {
                                         var replyInfo = new ReplyInfo();
                                         replyInfo.Text = mentionText.Remove(timeMatch.Index, timeMatch.Length);
-                                        Match replybackinMatch = Regex.Match(replyInfo.Text, "@replybackin", RegexOptions.IgnoreCase);
+                                        Match replybackinMatch = Regex.Match(replyInfo.Text, "@" + screenName, RegexOptions.IgnoreCase);
                                         replyInfo.Text = replyInfo.Text.Remove(replybackinMatch.Index, replybackinMatch.Length);
                                         replyInfo.Id = mention.Id;
                                         replyInfo.UserName = mention.User.ScreenName;
