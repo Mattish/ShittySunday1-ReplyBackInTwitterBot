@@ -115,7 +115,7 @@ namespace ReplyBackIn
                                     Log("1: Id: {0} User: {1}: {2}", mention.Id, mention.User, mention.Text);
                                     lastTweetReadId = mention.Id;
                                     string mentionText = mention.Text;
-                                    Match timeMatch = Regex.Match(mentionText, @"(\d{1,2}[mhw]{0,1}){1,3}");
+                                    Match timeMatch = Regex.Match(mentionText, @"(\d{1,2}[mhd]){1,3}");
 
                                     if (timeMatch.Success)
                                     {
