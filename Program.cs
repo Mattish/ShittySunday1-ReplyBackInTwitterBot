@@ -49,7 +49,7 @@ namespace ReplyBackIn
             var taskForReplying = new Task(() => TaskForReplying(autoResetEvent, tokens));
             taskForReplying.Start();
             _tweetsToRespondSortedList = new SortedList<DateTime, ReplyInfo>();
-            var taskForGettingTweets = new Task(() => GetTweetsIfGreaterThenDate(autoResetEvent, tokens, lastTweetReadId));
+            var taskForGettingTweets = new Task(() => TaskForCheckingMentions(autoResetEvent, tokens, lastTweetReadId));
             taskForGettingTweets.Start();
             Log("Started listening!");
             Console.ReadKey();
@@ -94,7 +94,7 @@ namespace ReplyBackIn
             return 0;
         }
 
-        void GetTweetsIfGreaterThenDate(AutoResetEvent autoResetEvent, Tokens tokens, long lastTweetReadIdInput)
+        void TaskForCheckingMentions(AutoResetEvent autoResetEvent, Tokens tokens, long lastTweetReadIdInput)
         {
             long lastTweetReadId = lastTweetReadIdInput;
 
