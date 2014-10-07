@@ -18,7 +18,9 @@ Time Format
 ----------------
 
 > Match days = Regex.Match(input, @"\d{1,2}d");
+
 > Match hours = Regex.Match(input, @"\d{1,2}h");
+
 > Match minutes = Regex.Match(input, @"\d{1,2}m");
 
 I tried a more complex regex, but it broke.
