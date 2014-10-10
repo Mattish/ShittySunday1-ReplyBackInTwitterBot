@@ -215,12 +215,12 @@ namespace ReplyBackIn
                                     tokens.Statuses.Update(status => statusText,
                                         inReplyToStatusId => replyInfo.Id) != null)
                                 {
-                                    Log("2: Reminding {0}", "@" + replyInfo.UserName + replyInfo.Text);
+                                    Log("2: Reminding {0}", "@" + replyInfo.UserName + " " + replyInfo.Text);
                                 }
                             }
                             catch (Exception e)
                             {
-                                Log("2: {0} - {1}", e.Message, replyInfo.UserName + replyInfo.Text);
+                                Log("2: {0} - {1}", e.Message, replyInfo.UserName + " " + replyInfo.Text);
                             }
                             _tweetsToRespondSortedList.RemoveAt(0);
                         }
